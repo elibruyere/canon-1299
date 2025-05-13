@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="la">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canon 1273 - Analyse canonique interactive</title>
+  <style>
+    body { font-family: 'Georgia', serif; line-height: 1.6; padding: 1rem; }
+    .word { cursor: pointer; padding: 0.1rem 0.3rem; border-radius: 5px; }
+    .nominatif { background-color: #fff176; } /* jaune */
+    .accusatif { background-color: #81c784; } /* vert */
+    .genitif   { background-color: #64b5f6; } /* bleu */
+    .datif     { background-color: #ffb74d; } /* orange */
+    .ablatif   { background-color: #e57373; } /* rouge */
+    #tooltip {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #333;
+      color: white;
+      padding: 1rem;
+      font-size: 0.9rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Canon 1299 - Analyse</h1>
+  <p>
+    § 1. 
+    <span class="nominatif word" data-info="pronom relatif, nominatif singulier - celui qui">Qui</span>
+    <span class="ablatif word" data-info="préposition + ablatif : en vertu du droit">ex iure</span> 
+    <span class="genitif word" data-info="génitif - de nature">naturae</span> 
+    <span class="word" data-info="conjonction de coordination - et">et</span>
+    <span class="ablatif word" data-info="ablatif singulier, adjectif de iure - canonique">canonico</span>
+    <span class="word" data-info="adverbe - librement">libere</span> 
+    <span class="nominatif word" data-info="verbe, présent de valere, 3e pers. sing. - a la capacité">valet</span> 
+    <span class="ablatif word" data-info="ablatif pluriel + adjectif possessif - de ses biens">de suis bonis</span> 
+    <span class="word" data-info="infinitif présent - disposer">statuere</span>
+    , 
+    <span class="word" data-info="verbe principal, présent de posse, 3e pers. sing.">potest</span> 
+    <span class="nominatif word" data-info="accusatif pluriel + adjectif - à des causes pieuses">ad causas pias</span>
+    , 
+    <span class="word" data-info="sive... sive... : locution disjonctive -	soit... soit...">sive</span> 
+    <span class="nominatif word" data-info="per +accusatif : par acte">per actum</span> 
+    <span class="accusatif word" data-info="inter+ accusatif : entre vivants">inter vivos</span> 
+    <span class="word" data-info="sive... sive... : locution disjonctive -	soit... soit...">sive</span>
+    <span class="accusatif word" data-info="per +accusatif : par acte">per actum</span>
+    <span class="genitif word" data-info="de mort">mortis</span>
+    <span class="ablatif word" data-info="pour cause">causa</span>
+    ,
+    <span class="nominatif word" data-info="bona</span> 
+    <span class="word" data-info="infinitif présent	léguer, laisser">relinquere</span>
+      .
+  
+  </p>
+
+  <h1>Traduction</h1>
+  
+    <p>
+§1. Qui peut disposer librement de ses biens en vertu du droit naturel et du droit canonique peut laisser ses biens pour des causes pies, par acte entre vifs ou pour cause de mort.
+      </p>
+
+      <p>
+        §2. Dans les dispositions pour cause de mort en faveur de l’Église, les formalités juridiques du droit civil seront autant que possible observées ; si elles ont été omises, les héritiers doivent être avertis de l’obligation à laquelle ils sont tenus, d’accomplir la volonté du testateur.
+        </p>
+
+  <div id="tooltip"></div>
+
+  <script>
+    const words = document.querySelectorAll('.word');
+    const tooltip = document.getElementById('tooltip');
+
+    words.forEach(word => {
+      word.addEventListener('click', () => {
+        tooltip.innerText = word.getAttribute('data-info');
+        tooltip.style.display = 'block';
+      });
+    });
+  </script>
+  
+  <ul>
+        <li><a href=" https://elibruyere.github.io/Liber-5/">Retour au Livre 5</a></li> 
+        <li><a href="https://elibruyere.github.io/analyses-canoniques/">Retour à la page d'accueil</a></li>    
+  </ul>
+  
+</body>
+</html>
